@@ -1,13 +1,13 @@
 const inquirer = require('inquirer');
-const { writeFile, copyFile } = require('./utils/generate-site.js');
-const generatePage = require('./src/page-template.js');
-
+//const { writeFile, copyFile } = require('./utils/generate-site.js');
+//const buildTeam = require('./src/page-template.js');
+const fs = require('fs');
 
 const Engineer = require('./lib/Engineer.js')
 const Manager = require('./lib/Manager.js')
 const Intern = require('./lib/Intern.js')
 
-const teamMembers = [];
+const teamArr = [];
 
 const addMember = () => {
     return inquirer.prompt([
@@ -90,11 +90,12 @@ const addManager = () => {
     ]).then(data => {
         const name = data.name
         const id = data.id
-        const email= data.email
-        const number= data.number
+        const email = data.email
+        const number = data .number
         const manager = new Manager (name, id, email, number);
-        teamMembers.push(manager);
-        //addMember();
+        teamArr.push(manager);
+        addMember();
+
     });  
 };
 
@@ -158,7 +159,7 @@ const addEngineer = () => {
         const email = data.email
         const github = data.github
         const engineer = new Engineer (name, id, email, github);
-        teamMembers.push(engineer);
+        teamArr.push(engineer);
         addMember();
     });
 }
@@ -223,19 +224,91 @@ const addIntern = () => {
         const email = data.email
         const school = data .school
         const intern = new Intern (name, id, email, school);
-        teamMembers.push(intern);
+        teamArr.push(intern);
         addMember();
     });  
 }
+
+function buildTeam ()  {
+    const htmlArr = [];
+    const htmlMain =`
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>My Team</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Team</h1>
+    </header>
+`
+htmlArr.push(htmlMain);
+    for (let i = 0; i < teamArr.length; i++) {
+        let member = `
+        <div>
+        <div>
+            <h2>${teamArr[i].name}</h2>
+            <h3>${teamArr[i].title}</h3>
+        </div>
+        <div>
+            <p>Employee ID:${teamArr[i].id}</p>
+            <p>Email: <a href="mailto:${teamArr[i].email}">${teamArr[i].email}</a></p>
+        `
+        
+        if (teamArr[i].number){
+            member += `
+            <p>Office number: ${teamArr[i].number}</p>
+            `
+        }
+        if (teamArr[i].github){
+            member += `
+            <p>GitHub: <a href="https://github.com/${teamArr[i].github}">${teamArr[i].github}</a></p>
+            `
+        }
+        if (teamArr[i].school){
+            member += `
+            <p>School: ${teamArr[i].school}</p>
+            `
+        }
+        
+        member +=
+        `
+        </div>
+        </div>
+        `;
+        htmlArr.push(member)
+    }
+    
+const htmlEnd = `
+        </div>
+    </body>
+</html>
+`
+htmlArr.push(htmlEnd);
+
+fs.writeFile('./dist/index.html', htmlArr.join(""), err => {
+    if (err) throw err;
+    console.log('Team Profile created! Check out index.html in dist directory to see it!')
+});
+}
+
 
 const init = () => {
     console.log(`
     Let\'s build your team!
 `);
+
+
+
 addManager()
-    .then(addMember)
-    .then(profileData => {
-        return generatePage(profileData);
+
+    /*.then(profileData => {
+        return buildTeam(profileData);
     })
     .then(pageHTML => {
         return writeFile(pageHTML);
@@ -249,7 +322,7 @@ addManager()
     })
     .catch(err => {
         console.log(err);
-    });
+    });*/
 }
 // function call to initialize program
 init();
