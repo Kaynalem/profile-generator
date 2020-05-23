@@ -88,6 +88,10 @@ const addManager = () => {
             }
         },
     ]).then(data => {
+        const name = data.name
+        const id = data.id
+        const email= data.email
+        const number= data.number
         const manager = new Manager (name, id, email, number);
         teamMembers.push(manager);
         //addMember();
@@ -149,6 +153,10 @@ const addEngineer = () => {
             }
         }
     ]).then(data => {
+        const name = data.name
+        const id = data.id
+        const email = data.email
+        const github = data.github
         const engineer = new Engineer (name, id, email, github);
         teamMembers.push(engineer);
         addMember();
@@ -210,6 +218,10 @@ const addIntern = () => {
             }
         }
     ]).then(data => {
+        const name = data.name
+        const id = data.id
+        const email = data.email
+        const school = data .school
         const intern = new Intern (name, id, email, school);
         teamMembers.push(intern);
         addMember();
