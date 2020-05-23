@@ -231,7 +231,7 @@ const addIntern = () => {
 
 function buildTeam ()  {
     const htmlArr = [];
-    const htmlMain =`
+    const htmlStart =`
 <!DOCTYPE html> 
 <html lang="en"> 
 
@@ -240,44 +240,51 @@ function buildTeam ()  {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>My Team</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>My Team</h1>
-    </header>
+<header class="bg-dark">
+    <div class="container flex-row justify-space-between align-center py-3">
+        <h1 class="page-title text-white text-center">My Team</h1>
+    </div>
+</header>
+    <div class="container mt-5">
+    <div class="row mx-auto d-flex justify-content-center">
 `
-htmlArr.push(htmlMain);
+htmlArr.push(htmlStart);
     for (let i = 0; i < teamArr.length; i++) {
         let member = `
-        <div>
-        <div>
+        <div class="col-sm-3 mb-5">
+        <div class="card bg-light" style="max-width: 18rem; min-width: 14rem;">
+        <div class="card-header text-white bg-secondary mb-3">
             <h2>${teamArr[i].name}</h2>
             <h3>${teamArr[i].title}</h3>
         </div>
         <div>
-            <p>Employee ID:${teamArr[i].id}</p>
-            <p>Email: <a href="mailto:${teamArr[i].email}">${teamArr[i].email}</a></p>
+            <p class="card-text m-3">Employee ID:${teamArr[i].id}</p>
+            <p class="card-text m-3">Email: <a href="mailto:${teamArr[i].email}">${teamArr[i].email}</a></p>
         `
         
         if (teamArr[i].number){
             member += `
-            <p>Office number: ${teamArr[i].number}</p>
+            <p class="card-text m-3">Office number: ${teamArr[i].number}</p>
             `
         }
         if (teamArr[i].github){
             member += `
-            <p>GitHub: <a href="https://github.com/${teamArr[i].github}">${teamArr[i].github}</a></p>
+            <p class="card-text m-3">GitHub: <a href="https://github.com/${teamArr[i].github}">${teamArr[i].github}</a></p>
             `
         }
         if (teamArr[i].school){
             member += `
-            <p>School: ${teamArr[i].school}</p>
+            <p class="card-text m-3">School: ${teamArr[i].school}</p>
             `
         }
         
         member +=
         `
+        </div>
         </div>
         </div>
         `;
@@ -286,6 +293,8 @@ htmlArr.push(htmlMain);
     
 const htmlEnd = `
         </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     </body>
 </html>
 `
