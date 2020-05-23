@@ -240,6 +240,7 @@ function buildTeam ()  {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>My Team</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -259,7 +260,7 @@ htmlArr.push(htmlStart);
         <div class="card bg-light" style="max-width: 18rem; min-width: 14rem;">
         <div class="card-header text-white bg-secondary mb-3">
             <h2>${teamArr[i].name}</h2>
-            <h3>${teamArr[i].title}</h3>
+            <h3><i class="fas fa-user"></i> ${teamArr[i].title}</h3>
         </div>
         <div>
             <p class="card-text m-3">Employee ID:${teamArr[i].id}</p>
@@ -273,7 +274,7 @@ htmlArr.push(htmlStart);
         }
         if (teamArr[i].github){
             member += `
-            <p class="card-text m-3">GitHub: <a href="https://github.com/${teamArr[i].github}">${teamArr[i].github}</a></p>
+            <p class="card-text m-3"><i class="fab fa-github mr-2"></i>GitHub: <a href="https://github.com/${teamArr[i].github}">${teamArr[i].github}</a></p>
             `
         }
         if (teamArr[i].school){
