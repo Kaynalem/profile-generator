@@ -263,7 +263,7 @@ htmlArr.push(htmlStart);
             <h3><i class="fas fa-user"></i> ${teamArr[i].title}</h3>
         </div>
         <div>
-            <p class="card-text m-3">Employee ID:${teamArr[i].id}</p>
+            <p class="card-text m-3">Employee ID: ${teamArr[i].id}</p>
             <p class="card-text m-3">Email: <a href="mailto:${teamArr[i].email}">${teamArr[i].email}</a></p>
         `
         
