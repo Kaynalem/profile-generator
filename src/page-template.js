@@ -76,4 +76,4 @@ buildTeam = teamArr => {
     });
 }
 
-    module.exports = buildTeam
+module.exports = buildTeam

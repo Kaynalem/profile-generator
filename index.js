@@ -7,6 +7,7 @@ const Intern = require('./lib/Intern.js')
 
 const teamArr = [];
 
+//prompts to option to add Engineer, Intern or no more members which builds team/generates html when selected
 const addMember = () => {
     return inquirer.prompt([
         {
@@ -31,6 +32,7 @@ const addMember = () => {
         }
     });
 }
+//initial prompt to add Manager contact information when app initiates
 const promptUser = () => {
     console.log(`
     Let\'s build your team!
@@ -81,6 +83,7 @@ const promptUser = () => {
         name: 'officeNumber',
         message: 'What is the team manager\'s office number? (Required)',
         validate: nameInput => {
+            //validate 10 digit phone number entered (change to /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/ for international numbers)
             if (/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(nameInput)) {
                 return true;
                 } else {
@@ -95,7 +98,7 @@ const promptUser = () => {
         addMember();
     });  
 };
-
+//prompts to add Engineer contact information when Engineer is selected
 const addEngineer = () => {
     return inquirer.prompt([
         {
@@ -157,7 +160,7 @@ const addEngineer = () => {
         addMember();
     });
 }
-
+//prompts to add Intern contact information when Intern is selected
 const addIntern = () => {
     return inquirer.prompt([
         {
