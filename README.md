@@ -14,9 +14,9 @@
   * [Questions](#questions)
   ## Demo
   Follow along with this [video]    
-  Demo  
+    
   ![demo](https://raw.githubusercontent.com/Kaynalem/profile-generator/master/utils/demo.gif)  
-  Generated Team Profile  
+  ### Generated Team Profile  
   ![mockup](https://raw.githubusercontent.com/Kaynalem/profile-generator/master/utils/mockup.PNG)
   ## Installation
   To install necessary dependencies, run the following command:
@@ -36,7 +36,7 @@
   ```
   npm run test
   ```
-  Test Demo  
+  ### Test Demo  
   ![demo](https://raw.githubusercontent.com/Kaynalem/profile-generator/master/utils/testdemo.gif)  
   ## Questions
   If you have any questions about the repo, open an issue or contact me directly at [kaynalem@gmail.com](mailto:kaynalem@gmail.com).  
