@@ -16,7 +16,7 @@ buildTeam = teamArr => {
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <header class="bg-dark">
+    <header class="bg-info">
         <div class="container flex-row justify-space-between align-center py-3">
             <h1 class="page-title text-white text-center">My Team</h1>
         </div>
@@ -28,8 +28,8 @@ buildTeam = teamArr => {
     for (let i = 0; i < teamArr.length; i++) {
         let member = `
         <div class="col-sm-3 mb-5">
-        <div class="card bg-light" style="max-width: 18rem; min-width: 14rem;">
-        <div class="card-header text-white bg-secondary mb-3">
+        <div class="card bg-light shadow" style="max-width: 18rem; min-width: 14rem;">
+        <div class="card-header text-white bg-dark mb-3">
             <h2>${teamArr[i].name}</h2>
             <h3>${teamArr[i].icon} ${teamArr[i].title}</h3>
         </div>
