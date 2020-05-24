@@ -3,28 +3,28 @@ const fs = require('fs');
 buildTeam = teamArr => {
     const htmlArr = [];
     const htmlStart =`
-<!DOCTYPE html> 
-<html lang="en"> 
+    <!DOCTYPE html> 
+    <html lang="en"> 
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>My Team</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="bg-dark">
-    <div class="container flex-row justify-space-between align-center py-3">
-        <h1 class="page-title text-white text-center">My Team</h1>
-    </div>
-</header>
-    <div class="container mt-5">
-    <div class="row mx-auto d-flex justify-content-center">
-`
-htmlArr.push(htmlStart);
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <header class="bg-dark">
+        <div class="container flex-row justify-space-between align-center py-3">
+            <h1 class="page-title text-white text-center">My Team</h1>
+        </div>
+    </header>
+        <div class="container mt-5">
+        <div class="row mx-auto d-flex justify-content-center">
+    `
+    htmlArr.push(htmlStart);
     for (let i = 0; i < teamArr.length; i++) {
         let member = `
         <div class="col-sm-3 mb-5">
@@ -53,7 +53,6 @@ htmlArr.push(htmlStart);
             <p class="card-text m-3">School: ${teamArr[i].school}</p>
             `
         }
-        
         member +=
         `
         </div>
@@ -62,20 +61,19 @@ htmlArr.push(htmlStart);
         `;
         htmlArr.push(member)
     }
-    
-const htmlEnd = `
-        </div>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    </body>
-</html>
-`
-htmlArr.push(htmlEnd);
+    const htmlEnd = `
+            </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        </body>
+    </html>
+    `
+    htmlArr.push(htmlEnd);
 
-fs.writeFile('./dist/index.html', htmlArr.join(""), err => {
-    if (err) throw err;
-    console.log('Team Profile created! Check out index.html in dist directory to see it!')
-});
+    fs.writeFile('./output/index.html', htmlArr.join(""), err => {
+        if (err) throw err;
+        console.log('Team Profile created! Check out index.html in the output directory to see it!')
+    });
 }
 
     module.exports = buildTeam
