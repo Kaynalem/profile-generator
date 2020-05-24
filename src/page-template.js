@@ -31,21 +31,21 @@ buildTeam = teamArr => {
         <div class="card bg-light" style="max-width: 18rem; min-width: 14rem;">
         <div class="card-header text-white bg-secondary mb-3">
             <h2>${teamArr[i].name}</h2>
-            <h3><i class="fas fa-user"></i> ${teamArr[i].title}</h3>
+            <h3>${teamArr[i].icon} ${teamArr[i].title}</h3>
         </div>
         <div>
             <p class="card-text m-3">Employee ID: ${teamArr[i].id}</p>
             <p class="card-text m-3">Email: <a href="mailto:${teamArr[i].email}">${teamArr[i].email}</a></p>
         `
         
-        if (teamArr[i].number){
+        if (teamArr[i].officeNumber){
             member += `
-            <p class="card-text m-3">Office number: ${teamArr[i].number}</p>
+            <p class="card-text m-3">Office number: ${teamArr[i].officeNumber}</p>
             `
         }
         if (teamArr[i].github){
             member += `
-            <p class="card-text m-3"><i class="fab fa-github mr-2"></i>GitHub: <a href="https://github.com/${teamArr[i].github}">${teamArr[i].github}</a></p>
+            <p class="card-text m-3"><i class="fab fa-github mr-2"></i>GitHub: <a href="https://github.com/${teamArr[i].github}" target="_blank">${teamArr[i].github}</a></p>
             `
         }
         if (teamArr[i].school){

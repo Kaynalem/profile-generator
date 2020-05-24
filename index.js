@@ -77,7 +77,7 @@ const promptUser = () => {
         },
         {
         type: 'input',
-        name: 'number',
+        name: 'officeNumber',
         message: 'What is the team manager\'s office number? (Required)',
         validate: nameInput => {
             if (nameInput) {
@@ -89,7 +89,7 @@ const promptUser = () => {
             }
         },
     ]).then(data => {
-        const manager = new Manager (data.name, data.id, data.email, data.number);
+        const manager = new Manager (data.name, data.id, data.email, data.officeNumber);
         teamArr.push(manager);
         addMember();
     });  
