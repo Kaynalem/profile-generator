@@ -15,7 +15,7 @@
   ## Demo
   Follow along with this [video]    
     
-  ![demo](https://raw.githubusercontent.com/Kaynalem/profile-generator/master/utils/demo.gif)  
+  ![demo](https://raw.githubusercontent.com/Kaynalem/profile-generator/master/utils/appdemo.gif)  
   ### Generated Team Profile  
   ![mockup](https://raw.githubusercontent.com/Kaynalem/profile-generator/master/utils/mockup.PNG)
   ## Installation
