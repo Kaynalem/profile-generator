@@ -34,6 +34,8 @@
   ```
   npm run test
   ```
+  Test Demo  
+  ![demo](https://github.com/Kaynalem/README-generator/blob/master/utils/testdemo.gif?raw=true)  
   ## Questions
   If you have any questions about the repo, open an issue or contact me directly at [kaynalem@gmail.com](mailto:kaynalem@gmail.com).  
   You can find more of my work at my [Github](https://github.com/kaynalem) page.
