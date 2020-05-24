@@ -67,10 +67,11 @@ const promptUser = () => {
         name: 'email',
         message: 'What is the team manager\'s email address? (Required)',
         validate: nameInput => {
-            if (nameInput) {
+            //validate email address is in correct format of _@_._
+            if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(nameInput)) {
                 return true;
                 } else {
-                console.log('Please enter manager\'s email address!');
+                console.log('Please enter a valid email address!');
                 return false;
                 }
             }
@@ -80,10 +81,10 @@ const promptUser = () => {
         name: 'officeNumber',
         message: 'What is the team manager\'s office number? (Required)',
         validate: nameInput => {
-            if (nameInput) {
+            if (/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(nameInput)) {
                 return true;
                 } else {
-                console.log('Please enter manager\'s office number!');
+                console.log('Please enter a valid phone number!');
                 return false;
                 }
             }
@@ -128,10 +129,11 @@ const addEngineer = () => {
         name: 'email',
         message: 'What is the engineer\'s email address? (Required)',
         validate: nameInput => {
-            if (nameInput) {
+            //validate email address is in correct format of _@_._
+            if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(nameInput)) {
                 return true;
                 } else {
-                console.log('Please engineer\'s email address!');
+                console.log('Please enter a valid email address!');
                 return false;
                 }
             }
@@ -189,10 +191,11 @@ const addIntern = () => {
         name: 'email',
         message: 'What is the intern\'s email address? (Required)',
         validate: nameInput => {
-            if (nameInput) {
+            //validate email address is in correct format of _@_._
+            if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(nameInput)) {
                 return true;
                 } else {
-                console.log('Please intern\'s email address!');
+                console.log('Please enter a valid email address!');
                 return false;
                 }
             }
