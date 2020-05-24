@@ -13,7 +13,9 @@
   * [Tests](#tests)
   * [Questions](#questions)
   ## Demo
-  Follow along with this [video]  
+  Follow along with this [video]    
+  Demo  
+  ![demo](https://raw.githubusercontent.com/Kaynalem/profile-generator/master/utils/demo.gif)  
   Generated Team Profile  
   ![mockup](https://raw.githubusercontent.com/Kaynalem/profile-generator/master/utils/mockup.PNG)
   ## Installation
