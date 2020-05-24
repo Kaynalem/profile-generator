@@ -13,7 +13,7 @@
   * [Tests](#tests)
   * [Questions](#questions)
   ## Demo
-  Follow along with this [video]    
+  Follow along with this [video](https://github.com/Kaynalem/profile-generator/blob/master/utils/demo.mp4)  
     
   ![demo](https://raw.githubusercontent.com/Kaynalem/profile-generator/master/utils/appdemo.gif)  
   ### Generated Team Profile  
