@@ -89,11 +89,7 @@ const promptUser = () => {
             }
         },
     ]).then(data => {
-        const name = data.name
-        const id = data.id
-        const email = data.email
-        const number = data .number
-        const manager = new Manager (name, id, email, number);
+        const manager = new Manager (data.name, data.id, data.email, data.number);
         teamArr.push(manager);
         addMember();
     });  
@@ -154,11 +150,7 @@ const addEngineer = () => {
             }
         }
     ]).then(data => {
-        const name = data.name
-        const id = data.id
-        const email = data.email
-        const github = data.github
-        const engineer = new Engineer (name, id, email, github);
+        const engineer = new Engineer (data.name, data.id, data.email, data.github);
         teamArr.push(engineer);
         addMember();
     });
@@ -219,11 +211,7 @@ const addIntern = () => {
             }
         }
     ]).then(data => {
-        const name = data.name
-        const id = data.id
-        const email = data.email
-        const school = data .school
-        const intern = new Intern (name, id, email, school);
+        const intern = new Intern (data.name, data.id, data.email, data.school);
         teamArr.push(intern);
         addMember();
     });  
