@@ -21,7 +21,6 @@
   ## Installation
   To install necessary dependencies, run the following commands:
   ```
-  npm init 
   npm install inquirer 
   npm install jest --save-dev
   ```
